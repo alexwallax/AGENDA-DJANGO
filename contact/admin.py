@@ -13,4 +13,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_editable = 'first_name', 'last_name', # editar valores sem abrir
     list_display_links = 'id', 'phone',
 
-
+@admin.register(models.Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = 'name', #listar
+    ordering = '-id', #ordenar
