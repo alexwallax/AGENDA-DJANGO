@@ -6,7 +6,7 @@ from contact.models import Contact
 def index(request):
     contacts = Contact.objects.filter(show=True).order_by('-id')[:10]
 
-    print(contacts.query)
+    # print(contacts.query)
 
     context = {
         'contacts': contacts,
