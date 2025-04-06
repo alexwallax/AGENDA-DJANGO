@@ -1,13 +1,15 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User
 
 # id (primary key - automático)
 # first_name (string), last_name (string), phone (string)
 # email (email), created_date (date), description (text)
+# category (foreign key), show (boolean), picture (imagem)
 
-# category (foreign key), show (boolean), owner (foreign key)
-# picture (imagem)
+# Depois
+# owner (foreign key)
+
 
 class Category(models.Model):
     class Meta:
@@ -19,9 +21,10 @@ class Category(models.Model):
     def __str__(self) -> str:
         return self.name
 
+
 class Contact(models.Model):
     first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50, blank=True) # blank=True -> não obrigatorieddade 
+    last_name = models.CharField(max_length=50, blank=True)
     phone = models.CharField(max_length=50)
     email = models.EmailField(max_length=254, blank=True)
     created_date = models.DateTimeField(default=timezone.now)
@@ -29,14 +32,14 @@ class Contact(models.Model):
     show = models.BooleanField(default=True)
     picture = models.ImageField(blank=True, upload_to='pictures/%Y/%m/')
     category = models.ForeignKey(
-        Category, 
-        on_delete=models.SET_NULL, 
-        blank=True, null=True 
+        Category,
+        on_delete=models.SET_NULL,
+        blank=True, null=True
     )
     owner = models.ForeignKey(
-        User, 
-        on_delete=models.SET_NULL, 
-        blank=True, null=True 
+        User,
+        on_delete=models.SET_NULL,
+        blank=True, null=True
     )
 
     def __str__(self) -> str:

@@ -94,7 +94,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', 
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -124,9 +124,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (
     BASE_DIR / 'base_static',
 )
-STATIC_ROOT = BASE_DIR / 'static' # collectstatic
+STATIC_ROOT = BASE_DIR / 'static'  # collectstatic
 
-MEDIA_URL = 'media/' # arquivos enviados pelo usuário
+MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
@@ -134,7 +134,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-try: 
+try:
     from project.local_settings import *
 except ImportError:
     ...
