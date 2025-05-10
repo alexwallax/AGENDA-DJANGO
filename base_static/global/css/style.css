@@ -48,35 +48,6 @@ body {
   background: var(--clr-light-gray);
 }
 
-
-
-
-
-.contact-links {
-  margin-block: calc(var(--small-font-size) * 2);
-  display: flex;
-  align-items: center;
-  gap: 0 var(--spacing);
-  }
-  
-  .btn-link {
-  font-size: var(--small-font-size);
-  text-decoration: none;
-  font-weight: bold;
-  padding: 1rem;
-  display: block;
-  line-height: var(--small-font-size);
-  }
-  
-  .btn-delete {
-  background: tomato;
-  }
-
-
-
-
-
-
 img,
 svg {
   display: block;
@@ -268,6 +239,11 @@ svg {
   border: 1px solid rgba(255, 255, 0, 90%);
 }
 
+.message.info {
+  background: rgba(0, 0, 255, 0.3);
+  border: 1px solid rgba(0, 0, 255, 0.3);
+}
+
 .form-wrapper {
   max-width: 60rem;
   margin: var(--spacing) auto;
@@ -342,7 +318,22 @@ svg {
   box-shadow: 0 0 5px var(--link-dark-color);
 }
 
+.contact-links {
+  margin-block: calc(var(--small-font-size) * 2);
+  display: flex;
+  align-items: center;
+  gap: 0 var(--spacing);
+}
 
+.btn-link {
+  font-size: var(--small-font-size);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 1rem;
+  display: block;
+  line-height: var(--small-font-size);
+}
 
-
-
+.btn-delete {
+  background: tomato;
+}
